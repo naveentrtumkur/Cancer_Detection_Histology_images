@@ -3,6 +3,7 @@
 #       1 --> Mitosis region
 #       0 ---> Non-Mitosis Region
 
+import generate_bounding_box
 import os
 file_list=os.listdir('./Full_Size_Images')
 for file in file_list[:]: # filelist[:] makes a copy of filelist.
@@ -31,3 +32,5 @@ print("dic len=",len(classif_dict))
 
 for x, y in classif_dict.items():
   print("key=",x,"value=", y)
+  if y ==1:
+    generate_bounding_box.draw_bound('./Full_Size_Images/'+x)
