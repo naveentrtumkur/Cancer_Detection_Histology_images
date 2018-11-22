@@ -39,6 +39,4 @@ tiles_count = (width * height)/(mit_wid * mit_height)
 #print("Tiles count=",tiles_count)
 image_slicer.slice('Full_Size_Images/TUPAC-TE-319.svs.tiff', tiles_count)
 
-
-
-#
+# The sliced images will be in the directory of slicable image.,..
