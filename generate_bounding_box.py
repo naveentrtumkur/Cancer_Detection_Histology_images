@@ -13,14 +13,19 @@ def draw_bound(image, bound_coordinates, out_color):
 
     rimg = img.copy()
     rimg_draw = ImageDraw.Draw(rimg)
-    rimg_draw.rectangle(bound_coordinates, fill=None, outline=out_color)
+    rimg_draw.rectangle(bound_coordinates, fill=None, outline=out_color, width=25)
     rimg.show()
 
 
 if __name__=="__main__":
-    bound_vals = (100, 1000, 1000, 2000)
-    out_col = (0, 255, 0)
-    draw_bound("BuckId.jpg", bound_vals, out_col)
+    image = Image.open("./Full_Size_Images/TUPAC-TE-319.svs_01_05.png")
+    #image = Image.open("BuckId.jpg")
+    width, height = image.size
+    print("width = ",width, "height==",height)
+    bound_vals = (0 +200, 0 +200, width -200, height-200)
+    #bound_vals = (100, 1000, 1000, 2000)
+    out_col = (0, 0, 255,255)
+    draw_bound("./Full_Size_Images/TUPAC-TE-319.svs_01_05.png", bound_vals, out_col)
 '''
 import numpy as np
 import cv2 as cv
