@@ -11,6 +11,7 @@
 import image_slicer
 import PIL.Image
 from PIL import Image
+import pickle
 
 #Please change the maximum size so that the default value is adjusted.
 PIL.Image.MAX_IMAGE_PIXELS = 1011497282371
@@ -37,6 +38,7 @@ print("mitosis height=",mit_height)
 
 tiles_count = (width * height)/(mit_wid * mit_height)
 #print("Tiles count=",tiles_count)
-image_slicer.slice('Full_Size_Images/TUPAC-TE-319.svs.tiff', tiles_count)
+tiles = image_slicer.slice('Full_Size_Images/TUPAC-TE-319.svs.tiff', tiles_count)
+pickle.dump(tiles,open("tiles_pickle.sav",'wb'))
 
 # The sliced images will be in the directory of slicable image.,..
